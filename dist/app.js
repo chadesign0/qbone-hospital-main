@@ -55,6 +55,40 @@ async function setDoctor(index) {
 
 doctorNext.addEventListener('click', () => setDoctor((doctorIndex + 1) % doctorCards.length));
 doctorButtons.forEach((button, index) => button.addEventListener('click', () => setDoctor(index)));
+const spaceGallery = document.querySelector('.space-photo');
+const spaceTrack = spaceGallery.querySelector('.space-track');
+const spaceSlides = [...spaceTrack.querySelectorAll('.space-slide')];
+const spacePrev = spaceGallery.querySelector('.space-prev');
+const spaceNext = spaceGallery.querySelector('.space-next');
+const spaceDots = document.querySelector('.space-dots');
+let spaceIndex = 0;
+const spaceButtons = spaceSlides.map((slide, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.setAttribute('aria-label', `공간 사진 ${index + 1} 보기`);
+  button.setAttribute('aria-controls', 'space-track');
+  button.addEventListener('click', () => setSpace(index));
+  spaceDots.append(button);
+  return button;
+});
+function setSpace(index) {
+  spaceIndex = (index + spaceSlides.length) % spaceSlides.length;
+  spaceTrack.style.transform = `translateX(-${spaceIndex * 100}%)`;
+  spaceSlides.forEach((slide, i) => {
+    slide.setAttribute('aria-label', `${i + 1} / ${spaceSlides.length}`);
+    slide.setAttribute('aria-hidden', String(i !== spaceIndex));
+  });
+  spaceButtons.forEach((button, i) => {
+    button.classList.toggle('active', i === spaceIndex);
+    button.setAttribute('aria-pressed', String(i === spaceIndex));
+  });
+  document.querySelector('#space-status').textContent = `공간 사진 ${spaceIndex + 1} / ${spaceSlides.length}`;
+}
+spacePrev.disabled = spaceNext.disabled = spaceSlides.length < 2;
+spaceDots.hidden = spaceSlides.length < 2;
+spacePrev.addEventListener('click', () => setSpace(spaceIndex - 1));
+spaceNext.addEventListener('click', () => setSpace(spaceIndex + 1));
+setSpace(0);
 const searchSections = [{title:'병원소개',words:'큐본 병원 소개',id:'hospital'},{title:'진료센터',words:'특화 관절 무릎 척추 비수술 치료',id:'centers'},{title:'치료원칙',words:'정밀 진단 단계 재활 회복',id:'principles'},{title:'의료진 소개',words:'전영식 신동협 백운영 원장 의사',id:'doctors'},{title:'병원 공간',words:'둘러보기 휴식 인테리어',id:'space'},{title:'큐본의 새로운 소식',words:'뉴스 방송 언론 TV',id:'news'},{title:'공지사항과 치료후기',words:'공지 소식 후기 수술',id:'community'},{title:'진료시간 및 오시는 길',words:'전화 연락 시간 예약 상담 주차 주소 위치 지도 신당역',id:'contact'}];
 document.querySelector('.search-button').addEventListener('click', () => { const content = openDialog('큐본병원 페이지 검색'); const input = document.createElement('input'); input.type = 'search'; input.placeholder = '진료센터, 의료진, 오시는 길 등'; input.setAttribute('aria-label','페이지에서 찾을 내용'); const results = document.createElement('div'); results.className='search-results'; results.setAttribute('aria-live','polite'); function renderResults() { const query=input.value.trim().toLowerCase(); results.replaceChildren(); const matches=searchSections.filter(section => (section.title+' '+section.words).toLowerCase().includes(query)); if(!matches.length){const p=document.createElement('p');p.textContent='일치하는 항목이 없습니다.';results.append(p);} matches.forEach(section => { const link=document.createElement('a');link.href='#'+section.id;link.textContent=section.title+' →';link.addEventListener('click',()=>dialog.close());results.append(link); }); } input.addEventListener('input',renderResults); content.append(input,results);renderResults();input.focus(); });
 const backTop = document.querySelector('.back-top');
