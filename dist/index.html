@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="다시 걷고 싶은 길, 다시 하고 싶은 일. 큐본병원이 관절과 척추의 건강한 일상 회복을 함께합니다.">
+  <meta name="theme-color" content="#17384d">
+  <title>큐본병원 | 건강한 일상으로의 회복</title>
+  <link rel="icon" href="assets/b6039.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+<header class="header" id="top">
+  <a class="brand" href="#top" aria-label="큐본병원 홈"><img src="assets/dad33.png" alt="큐본병원"></a>
+  <nav class="desktop-nav" aria-label="주 메뉴">
+    <a href="#hospital">병원소개</a><a href="#centers">특화센터</a><a href="#centers" data-center="관절센터">관절센터</a><a href="#centers" data-center="척추센터">척추센터</a><a href="#centers" data-center="비수술센터">비수술센터</a><a href="#contact">고객센터</a>
+  </nav>
+  <div class="header-tools">
+    <button class="account" data-service="회원가입"><img src="assets/2ee31.svg" alt="">회원가입</button>
+    <button class="account" data-service="로그인"><img src="assets/cbe98.svg" alt="">로그인</button>
+    <button class="icon-button search-button" aria-label="페이지 검색"><img src="assets/733b2.svg" alt=""></button>
+    <button class="icon-button menu-button" aria-label="전체 메뉴 열기" aria-expanded="false" aria-controls="all-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="all-menu" id="all-menu" hidden>
+  <nav aria-label="전체 메뉴"><a href="#hospital">병원소개</a><a href="#centers">진료센터</a><a href="#principles">치료원칙</a><a href="#doctors">의료진 소개</a><a href="#space">병원 둘러보기</a><a href="#news">큐본 소식</a><a href="#contact">진료시간 및 오시는 길</a></nav>
+  <a class="menu-phone" href="tel:0222348580">진료 문의 <strong>02.2234.8580</strong></a>
+</div>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-image" src="assets/9a962.png" alt="환자의 진료 자료를 함께 검토하는 의료진" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="hero-content"><span class="quote" aria-hidden="true">“</span><h1 id="hero-title">다시 걷고 싶은 길<br>다시 하고 싶은 일<br>Q본이 함께합니다.</h1><p>통증 때문에 미뤄 두었던 일상의 순간들을<br>다시 누릴 수 있도록 회복의 여정을 함께합니다.</p></div>
+  </section>
+  <section class="contact-strip container" aria-label="진료 안내">
+    <a class="phone-block" href="tel:0222348580"><span class="round-label">고객센터</span><span><small>문의전화</small><strong>02.2234.8580</strong></span></a>
+    <div class="hours-block"><span class="round-label">진료시간</span><div><dl><dt>평　일</dt><dd>AM 09:30 - PM 06:30</dd><dt>금요일</dt><dd>AM 09:30 - PM 06:30</dd><dt>토요일</dt><dd>AM 09:30 - PM 06:30</dd></dl><small>*일요일 및 공휴일 휴진</small></div></div>
+    <div class="quick-links"><button data-service="온라인상담"><img src="assets/b74fa.png" alt=""><span>온라인상담</span></button><button data-service="온라인예약"><img src="assets/36e34.png" alt=""><span>온라인예약</span></button><a href="#community"><img src="assets/04c92.png" alt=""><span>수술후기</span></a><a href="#contact"><img src="assets/f30fe.png" alt=""><span>오시는길</span></a></div>
+  </section>
+  <section class="hospital" id="hospital" aria-labelledby="hospital-title">
+    <div class="section-marker" aria-hidden="true"></div>
+    <div class="hospital-heading"><h2 id="hospital-title">Q-BONE HOSPITAL</h2><p>Q본병원은<br>관절과 척추의 통증을 세심하게 살피고<br>건강한 일상을 되찾도록 돕습니다.</p></div>
+    <div class="bone-word" aria-hidden="true">Q-BONE</div>
+    <div class="center-grid container" id="centers">
+      <button class="center-card" data-center-detail="특화치료"><img class="center-photo" src="assets/특화치료.png" alt="특화치료"><span class="center-caption"><img src="assets/특화icon.png" alt=""><strong>특화치료</strong></span></button>
+      <button class="center-card" data-center-detail="관절센터"><img class="center-photo" src="assets/관절센터.png" alt="무릎 관절 진료"><span class="center-caption"><img src="assets/관절icon.png" alt=""><strong>관절센터</strong></span></button>
+      <button class="center-card" data-center-detail="척추센터"><img class="center-photo" src="assets/척추센터.png" alt="척추 진료"><span class="center-caption"><img src="assets/척추icon.png" alt=""><strong>척추센터</strong></span></button>
+      <button class="center-card" data-center-detail="비수술센터"><img class="center-photo" src="assets/비수술센터.png" alt="비수술 치료"><span class="center-caption"><img src="assets/비수술icon.png" alt=""><strong>비수술센터</strong></span></button>
+    </div>
+  </section>
+  <section class="principles" id="principles" aria-labelledby="principles-title">
+    <div class="container"><h2 id="principles-title">큐본의 치료원칙</h2><p class="principles-intro">치료는 정확한 진단에서 시작되고 일상의 복귀에서 완성됩니다.<br>큐본병원은 환자에 맞는 치료를 함께 선택합니다.</p>
+    <div class="principles-grid">
+      <article><img src="assets/정밀진단.png" alt="" loading="lazy"><h3>정밀 진단</h3><p>증상과 검사 결과를 함께 살펴 통증의<br>원인을 구체적으로 확인합니다.</p></article>
+      <article><img src="assets/치료선택.png" alt="" loading="lazy"><h3>치료 선택 설명</h3><p>가능한 치료 방법과 각각의 차이를<br>환자가 이해하기 쉽게 설명합니다.</p></article>
+      <article><img src="assets/단계별.png" alt="" loading="lazy"><h3>단계별 치료</h3><p>비수술 치료부터 필요한 경우<br>수술까지 환자의 상태에 맞춰 계획합니다.</p></article>
+      <article><img src="assets/회복재활.png" alt="" loading="lazy"><h3>회복재활 관리</h3><p>치료 이후에도 기능 회복과<br>일상 복귀를 위한 재활을 연결합니다.</p></article>
+    </div></div>
+  </section>
+  <section class="doctors" id="doctors" aria-label="의료진 소개">
+    <div class="doctor-side side-two"><img src="assets/원장3.png" alt="의료진" loading="lazy"></div>
+    <div class="doctor-side side-one"><img src="assets/원장2.png" alt="신동협 원장" loading="lazy"></div>
+    <article class="doctor-main"><img class="doctor-watermark" src="assets/b6039.png" alt="" loading="lazy"><div class="doctor-bio" aria-live="polite"><h2><strong id="doctor-name">전영식</strong> <span>원장</span></h2><div id="doctor-profile"><h3>진료분야</h3><p>· 관절, 정형외과</p><h3>학력 및 경력</h3><ul><li>고려대학교 의과대학 학사 및 석사 졸업</li><li>고려대학교 의료원 인턴</li><li>고대구로병원 정형외과 전공의 수료</li><li>국군양주병원 군의관</li><li>고대구로병원 정형외과 슬관절 전임의</li><li>삼성서울병원 슬관절 전임의 및 현 외래교수</li><li>전 안산 에이스병원 관절센터 원장</li></ul></div></div><img class="doctor-portrait" src="assets/1d918.png" alt="전영식 원장" loading="lazy"></article>
+    <button class="doctor-next" aria-label="다음 의료진 보기"><img src="assets/e2ff8.svg" alt=""></button>
+    <div class="doctor-pagination" aria-label="의료진 선택"><button class="active" aria-label="첫 번째 의료진" aria-pressed="true"></button><button aria-label="두 번째 의료진" aria-pressed="false"></button><button aria-label="세 번째 의료진" aria-pressed="false"></button></div>
+  </section>
+  <section class="space" id="space" aria-labelledby="space-title">
+    <div class="space-background"></div><div class="space-inner container"><div class="space-copy"><p class="eyebrow">큐본의 공간</p><h2 id="space-title">잠시 쉬어가며 여유를 누리는<br>큐본병원의 편안한 휴식공간</h2><p>환자와 보호자가 진료 전후 편안하게 머무르며<br>잠시 휴식을 취할 수 있도록 마련한 공간입니다.</p></div><button class="space-photo" data-image="assets/인테리어.png" data-title="큐본병원의 편안한 휴식공간" aria-label="병원 공간 이미지 크게 보기"><img src="assets/인테리어.png" alt="따뜻한 조명과 식물이 있는 큐본병원 접수 공간" loading="lazy"><span class="space-arrow" aria-hidden="true">›</span></button><div class="space-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+  </section>
+  <section class="news" id="news" aria-labelledby="news-title">
+    <h2 id="news-title">큐본의 새로운 소식</h2>
+    <div class="media-strip tv-strip"><button data-image="assets/TV속큐본.png" data-title="TV 속 큐본" aria-label="TV 속 큐본 이미지 크게 보기"><img src="assets/TV속큐본.png" alt="방송에 소개된 큐본병원 의료진의 건강 정보" loading="lazy"></button></div>
+    <div class="media-link container"><button class="pill-link" data-image="assets/TV속큐본.png" data-title="TV 속 큐본">TV속 큐본 자세히 보기 <span>›</span></button></div>
+    <div class="media-intro container"><img src="assets/b6039.png" alt="" loading="lazy"><h3>TV와 언론 속<br>큐본병원</h3><p>방송과 언론에 소개된 큐본병원의 진료 이야기와<br>의료진이 전하는 관절·척추 건강 정보를 만나보세요.</p></div>
+    <div class="media-strip press-strip"><button data-image="assets/언론속큐본.png" data-title="언론 속 큐본" aria-label="언론 속 큐본 이미지 크게 보기"><img src="assets/언론속큐본.png" alt="언론에 소개된 큐본병원의 관절·척추 진료 소식" loading="lazy"></button></div>
+    <div class="media-link container"><button class="pill-link" data-image="assets/언론속큐본.png" data-title="언론 속 큐본">언론속 큐본 자세히 보기 <span>›</span></button></div>
+  </section>
+  <section class="community container" id="community" aria-label="공지사항과 치료후기">
+    <button class="community-card" data-service="큐본의 공지사항"><img src="assets/공지사항.png" alt="" loading="lazy"><span class="community-copy"><strong>큐본의 공지사항</strong><span class="outline-link">자세히 보기 <b>›</b></span></span></button>
+    <button class="community-card" data-service="큐본의 치료후기"><img src="assets/치료후기.png" alt="" loading="lazy"><span class="community-copy"><strong>큐본의 치료후기</strong><span class="outline-link">자세히 보기 <b>›</b></span></span></button>
+  </section>
+</main>
+<footer class="footer" id="contact"><div class="container">
+  <div class="footer-main"><div class="visit"><p class="footer-eyebrow">ADDRESS &amp; SCHEDULE</p><h2>진료시간 및 오시는 길</h2><div class="visit-row"><h3>ADDRESS</h3><p>서울특별시 중구 다산로 258, 2층, 3층(흥인동)<br>지하철 2호선·6호선 신당역 11번 출구 도보 이내</p></div><div class="visit-row"><h3>SCHEDULE</h3><p>평일·금요일·토요일 09:30 ~ 18:30<br>일요일 및 공휴일 휴진<br>대표전화 <a href="tel:0222348580">02.2234.8580</a></p></div><div class="visit-row parking"><h3>PARKING</h3><p>건물 내 주차장 이용 · 외래 및 입원 주차 지원</p></div></div><a class="map" href="https://map.naver.com/p/search/서울특별시%20중구%20다산로%20258" target="_blank" rel="noopener noreferrer" aria-label="네이버 지도에서 큐본병원 위치 보기"><img src="assets/8a810.png" width="1920" height="922" alt="신당역 11번 출구 인근 큐본병원 약도" loading="lazy"></a></div>
+  <div class="footer-bottom"><a href="#top" class="footer-logo"><img src="assets/8a810.png" width="1920" height="922" alt="큐본병원" loading="lazy"></a><div class="footer-details"><p>큐본병원　 사업자등록번호 : 536-9801922　 서울특별시 중구 다산로 258, 2층·3층<br><a href="tel:0222348580">TEL. 02.2234.8580</a>　 © Qbonehospital All Rights Reserved.</p><nav aria-label="하단 메뉴"><a href="#hospital">병원소개</a><button data-service="개인정보처리방침">개인정보처리방침</button><button data-service="서비스이용약관">서비스이용약관</button><button data-service="비급여안내">비급여안내</button><a href="#contact">오시는 길</a></nav></div></div>
+</div></footer>
+<a class="back-top" href="#top" aria-label="맨 위로 이동">↑</a>
+<dialog class="detail-dialog" id="detail-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="닫기">×</button><div class="dialog-content"></div></dialog>
+</body>
+</html>
