@@ -6,6 +6,13 @@
 
 Node.js가 설치된 환경에서 이 폴더를 열고 `npm run dev`를 실행한 뒤 http://127.0.0.1:5173 에 접속합니다. 패키지 설치나 빌드가 필요하지 않습니다. 정적 호스팅에는 `dist` 폴더 내용을 사용합니다. `dist/index.html`을 직접 열어서 확인할 수도 있습니다.
 
+## GitHub Pages
+
+- 저장소: https://github.com/chadesign0/qbone-hospital-main
+- 사이트: https://chadesign0.github.io/qbone-hospital-main/
+
+`main`에 push하면 GitHub Actions가 `dist` 폴더를 GitHub Pages에 자동 배포합니다. 배포 상태는 저장소의 Actions 탭에서 확인할 수 있습니다.
+
 ## 수정 위치
 
 - `dist/index.html`: 메인 문구, 진료시간, 주소, 전화번호 및 메뉴
