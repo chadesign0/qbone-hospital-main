@@ -26,10 +26,12 @@ const searchSections = [{title:'병원소개',words:'큐본 병원 소개',id:'h
 document.querySelector('.search-button').addEventListener('click', () => { const content = openDialog('큐본병원 페이지 검색'); const input = document.createElement('input'); input.type = 'search'; input.placeholder = '진료센터, 의료진, 오시는 길 등'; input.setAttribute('aria-label','페이지에서 찾을 내용'); const results = document.createElement('div'); results.className='search-results'; results.setAttribute('aria-live','polite'); function renderResults() { const query=input.value.trim().toLowerCase(); results.replaceChildren(); const matches=searchSections.filter(section => (section.title+' '+section.words).toLowerCase().includes(query)); if(!matches.length){const p=document.createElement('p');p.textContent='일치하는 항목이 없습니다.';results.append(p);} matches.forEach(section => { const link=document.createElement('a');link.href='#'+section.id;link.textContent=section.title+' →';link.addEventListener('click',()=>dialog.close());results.append(link); }); } input.addEventListener('input',renderResults); content.append(input,results);renderResults();input.focus(); });
 const backTop = document.querySelector('.back-top');
 const header = document.querySelector('.header');
+const hero = document.querySelector('.hero');
 function updateScrollState() {
-  header.classList.toggle('is-scrolled', window.scrollY > 48);
+  header.classList.toggle('is-scrolled', hero.getBoundingClientRect().bottom <= 0);
   backTop.classList.toggle('visible', window.scrollY > 500);
 }
 window.addEventListener('scroll', updateScrollState, { passive: true });
 window.addEventListener('pageshow', updateScrollState);
+window.addEventListener('resize', updateScrollState);
 updateScrollState();
