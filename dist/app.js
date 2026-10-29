@@ -25,5 +25,11 @@ document.querySelectorAll('.doctor-pagination button').forEach((button, index) =
 const searchSections = [{title:'병원소개',words:'큐본 병원 소개',id:'hospital'},{title:'진료센터',words:'특화 관절 무릎 척추 비수술 치료',id:'centers'},{title:'치료원칙',words:'정밀 진단 단계 재활 회복',id:'principles'},{title:'의료진 소개',words:'전영식 신동협 원장 의사',id:'doctors'},{title:'병원 공간',words:'둘러보기 휴식 인테리어',id:'space'},{title:'큐본의 새로운 소식',words:'뉴스 방송 언론 TV',id:'news'},{title:'공지사항과 치료후기',words:'공지 소식 후기 수술',id:'community'},{title:'진료시간 및 오시는 길',words:'전화 연락 시간 예약 상담 주차 주소 위치 지도 신당역',id:'contact'}];
 document.querySelector('.search-button').addEventListener('click', () => { const content = openDialog('큐본병원 페이지 검색'); const input = document.createElement('input'); input.type = 'search'; input.placeholder = '진료센터, 의료진, 오시는 길 등'; input.setAttribute('aria-label','페이지에서 찾을 내용'); const results = document.createElement('div'); results.className='search-results'; results.setAttribute('aria-live','polite'); function renderResults() { const query=input.value.trim().toLowerCase(); results.replaceChildren(); const matches=searchSections.filter(section => (section.title+' '+section.words).toLowerCase().includes(query)); if(!matches.length){const p=document.createElement('p');p.textContent='일치하는 항목이 없습니다.';results.append(p);} matches.forEach(section => { const link=document.createElement('a');link.href='#'+section.id;link.textContent=section.title+' →';link.addEventListener('click',()=>dialog.close());results.append(link); }); } input.addEventListener('input',renderResults); content.append(input,results);renderResults();input.focus(); });
 const backTop = document.querySelector('.back-top');
-function updateBackTop() { backTop.classList.toggle('visible', window.scrollY > 500); }
-window.addEventListener('scroll',updateBackTop,{passive:true});updateBackTop();
+const header = document.querySelector('.header');
+function updateScrollState() {
+  header.classList.toggle('is-scrolled', window.scrollY > 48);
+  backTop.classList.toggle('visible', window.scrollY > 500);
+}
+window.addEventListener('scroll', updateScrollState, { passive: true });
+window.addEventListener('pageshow', updateScrollState);
+updateScrollState();
